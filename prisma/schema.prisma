@@ -6,3 +6,14 @@ datasource db {
   provider = "mongodb"
   url      = env("DATABASE_URL")
 }
+
+model plushies {
+  id      String   @id @default(auto()) @map("_id") @db.ObjectId
+  brand   String?
+  date_   DateTime @map("date ") @db.Date
+  name    String
+  size    String
+  species String
+  texture String
+}
+
