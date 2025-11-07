@@ -1,6 +1,8 @@
 // fetch items from API endpoint and populate the content div
+// NOTE: the API route is `/plushies` (defined in `routes/api.js`).
+// Using `/data` will return 404 because no such route exists.
 const getData = async () => {
-    const response = await fetch('/data')
+    const response = await fetch('/plushies')
     if (response.ok) {
         const data = await response.json()
         document.querySelector('#content').innerHTML = `<h3>✅ MongoDB connected. </h3>`
